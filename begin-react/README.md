@@ -29,3 +29,7 @@
 
 11. 배열에 항목 수정하기
 - 배열의 특정 Item 을 업데이트 할 때에도 map 을 사용할 수 있다.
+
+12. useEffect Hook
+- 랜더링, 리랜더링 될때마다 작업을 수행하도록 할 수있다.
+- component mount, unmount, update 시 함수를 수행하도록 할 수 있다.
