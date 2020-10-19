@@ -1,8 +1,13 @@
-import React, {useRef, useState} from 'react';
+import React, {useRef, useState, useMemo} from 'react';
 
 import "./App.css";
 import UserList from './UserList';
 import CreateUser from './CreateUser';
+
+function countActiveUsers(user) {
+  console.log("활성 사용자 수를 새는중...");
+  return user.filter(user => user.active).length;
+}
 
 function App() {
   const [users, setUsers] = useState([
@@ -75,6 +80,9 @@ function App() {
     );
   }
 
+  // 두번째 파라메터의 값이 변경될 때 첫번째 파라메터의 함수 수행
+  const count = useMemo(()=>countActiveUsers(users),[users]);
+
   return (
     <>
       <CreateUser 
@@ -88,6 +96,9 @@ function App() {
         onRemove={onRemove}
         onToggle={onToggle}
       />
+      <div>
+        활성 사용자 수: {count}
+      </div>
     </>
   );
 }

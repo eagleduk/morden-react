@@ -33,7 +33,7 @@ function User({user, onRemove, onToggle}) {
     );
 
     useEffect(()=>{
-        console.log("두번째 파라메터가 없으면 부모가 Component 가 랜더링, 리랜더링될 떄 사용한 만큼 로드된다.");
+        //console.log("두번째 파라메터가 없으면 부모가 Component 가 랜더링, 리랜더링될 떄 사용한 만큼 로드된다.");
     });
 
     return (
