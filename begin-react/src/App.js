@@ -1,4 +1,4 @@
-import React, {useRef, useState, useMemo} from 'react';
+import React, {useRef, useState, useMemo, useCallback} from 'react';
 
 import "./App.css";
 import UserList from './UserList';
@@ -31,9 +31,14 @@ function App() {
     }
   ]);
 
-  const nextId = useRef(4);
+  const [inputs, setInputs] = useState({
+    username: "",
+    email: ""
+  })
 
-  const onCreate = () => {
+  const { username, email } = inputs;
+  const nextId = useRef(4);
+  const onCreate = useCallback(() => {
     const user = {
       id: nextId.current,
       username,
@@ -48,29 +53,22 @@ function App() {
       email: ""
     })
     nextId.current += 1;
-  }
+  }, [username, email, users]);
 
-  const [inputs, setInputs] = useState({
-    username: "",
-    email: ""
-  })
 
-  const { username, email } = inputs;
+  const onChange = useCallback(e => {
+    const {name,value} = e.target;
+      setInputs({
+        ...inputs,
+        [name]: value
+      })
+  }, [inputs]);
 
-  const onChange = e => {
-
-  const {name,value} = e.target;
-    setInputs({
-      ...inputs,
-      [name]: value
-    })
-  };
-
-  const onRemove = id => {
+  const onRemove = useCallback(id => {
     setUsers(users.filter(user => user.id != id));
-  };
+  }, [users]);
 
-  const onToggle = id => {
+  const onToggle = useCallback(id => {
     setUsers(
       users.map(
         user => user.id ===id
@@ -78,7 +76,7 @@ function App() {
         : user
       )
     );
-  }
+  }, [users]);
 
   // 두번째 파라메터의 값이 변경될 때 첫번째 파라메터의 함수 수행
   const count = useMemo(()=>countActiveUsers(users),[users]);
