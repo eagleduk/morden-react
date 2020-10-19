@@ -46,14 +46,14 @@ function App() {
     };
     
     //setUsers([...users, user]);
-    setUsers(users.concat(user));
+    setUsers(users => users.concat(user));
 
     setInputs({
       username: "",
       email: ""
     })
     nextId.current += 1;
-  }, [username, email, users]);
+  }, [username, email]);
 
 
   const onChange = useCallback(e => {
@@ -65,18 +65,18 @@ function App() {
   }, [inputs]);
 
   const onRemove = useCallback(id => {
-    setUsers(users.filter(user => user.id != id));
-  }, [users]);
+    setUsers(users => users.filter(user => user.id != id));
+  }, []);
 
   const onToggle = useCallback(id => {
-    setUsers(
+    setUsers(users =>
       users.map(
         user => user.id ===id
         ? {...user, active: !user.active}
         : user
       )
     );
-  }, [users]);
+  }, []);
 
   // 두번째 파라메터의 값이 변경될 때 첫번째 파라메터의 함수 수행
   const count = useMemo(()=>countActiveUsers(users),[users]);
