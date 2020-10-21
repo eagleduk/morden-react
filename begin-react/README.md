@@ -52,3 +52,6 @@
 - 상태 업데이트 로직을 컴포넌트 밖으로 분리 가능
 - reducer : 상태를 업데이트하는 함수
 - [number,dispatch] = useReducer([함수],[기본값])
+
+17. Custom Hook
+- useState, useCallback 등을 이용하여 Hook 을 다른 파일 등으로 만들어서 가져다 사용하도록 한다.
