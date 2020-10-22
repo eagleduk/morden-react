@@ -1,4 +1,4 @@
-import { useState, useReducer, useCallback } from "react";
+import { useReducer, useCallback } from "react";
 
 function reducer(form, action) {
     switch(action.type) {
@@ -26,14 +26,14 @@ function useInputs(initialForm) {
             name,
             value
         });
-    });
+    }, []);
 
     const reset = useCallback(e => {
         dispatch({
             type: "RESET",
             initialForm
         })
-    })
+    }, [initialForm])
 
     /*
     const [form, setForm] = useState(initialForm);

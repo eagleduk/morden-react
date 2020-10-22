@@ -55,3 +55,7 @@
 
 17. Custom Hook
 - useState, useCallback 등을 이용하여 Hook 을 다른 파일 등으로 만들어서 가져다 사용하도록 한다.
+
+18. Context API를 사용한 전역값 관리
+- 여러 단계의 컴포넌트를 통하여 값을 전달할 때 사용
+- useContext, createContext 를 이용하여 값을 저장하고 필요할 때 꺼내어 사용할 수 있다.
