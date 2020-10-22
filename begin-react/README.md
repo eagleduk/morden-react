@@ -58,4 +58,11 @@
 
 18. Context API를 사용한 전역값 관리
 - 여러 단계의 컴포넌트를 통하여 값을 전달할 때 사용
-- useContext, createContext 를 이용하여 값을 저장하고 필요할 때
+- useContext, createContext 를 이용하여 값을 저장하고 필요할 때 꺼내어 사용할 수 있다.
+
+19. immer 를 사용한 불변성 지키기
+- 객체, 배열을 직접 고치지 않고 새롭게 만들어 사용
+- immer를 사용하면 불변성을 해치는 코드를 작성해도 대신 불변성 유지를 해준다.
+- yarn add immer
+- useState 등 기존 객체의 불변성을 관리하기 힘들어 지면 immer produce 의 첫번째 파라메터에 함수를 입력하면 updater로 사용가능 하다.
+** import 이후 window 에 선언을 해주면 개발자 도구에서 해당 컴포넌트를 사용할 수 있다. (함수도 가능한지 나중 테스트 필요)
