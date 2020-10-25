@@ -79,3 +79,8 @@
 - 컴포넌트 언마운트시 componentWillUnmount
 - componentDidCatch => 클래스형 컴포넌트에서만 사용
 ** error 관리 사이트 Sentry
+
+22. 개발관련 extension
+- prettier
+- ESLint
+- snippet -> https://snippet-generator.app/
