@@ -5,10 +5,14 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Hello from './Hello';
 import Counter from './Counter';
+import User from './User';
+import ErrorBoundary from './ErrorBoundary';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Counter />
+    <ErrorBoundary>
+      <User />
+    </ErrorBoundary>
   </React.StrictMode>,
   document.getElementById('root')
 );

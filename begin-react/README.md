@@ -70,3 +70,12 @@
 20. class 형 컴포넌트
 - 현재는 잘 사용하지 않는 방식
 - Hook 를 사용하면서 함수형 컴포넌트를 사용
+
+21. lifeCycle
+- class 컴포넌트에서 사용가능
+- https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+- 컴포넌트 마운트시 constructor -> getDerivedStateFromProps -> render -> componentDidMount
+- 컴포넌트 업데이트시 getDerivedStateFromProps -> shouldComponentUpdate -> render -> getSnapshotBeforeUpdate -> componentDidUpdate
+- 컴포넌트 언마운트시 componentWillUnmount
+- componentDidCatch => 클래스형 컴포넌트에서만 사용
+** error 관리 사이트 Sentry
